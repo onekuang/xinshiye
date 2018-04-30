@@ -1,0 +1,377 @@
+/**index.wxss**/
+page {
+    background: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.Main-dsc{
+  width: 100%;
+}
+
+.address{
+  color:#0063ce;
+  font-size:0.8em;
+  margin-bottom: 0.6em;
+}
+
+.dsc1{
+  margin-left: .5em;
+}
+
+.dsc2{
+  margin-left: 8em;
+}
+
+.button_index_style{
+  background:#CD4F39;
+  color:#FFF;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.texttitle{
+  margin-top: 20rpx;
+  color: #353535;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; 
+  align-content: center;
+  font-weight:900;
+  font-size: 50rpx;
+}
+.text_title{
+  margin-top: 20rpx;
+  color: #8d8d8d;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; 
+  align-content: center;
+  font-weight:900;
+  font-size: 50rpx;
+}
+.text_content{
+  margin-top: 20rpx;
+  color: #8B0000;
+  font-size: 32rpx;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.button_center{
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+.other-button-hover {
+  background-color: green;
+  opacity: 1.0;
+}
+
+.text_content{
+  color: #8B0000;
+  font-size: 32rpx;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.img{
+  clear: both;
+  display: block;
+  margin-top: 100rpx;
+  
+
+}
+
+
+.userinfo, .uploader, .tunnel {
+    margin-top: 40rpx;
+    margin-bottom: 40rpx;
+    height: 750rpx;
+    width: 100%;
+    background: #f1f1f1;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-left: none;
+    border-right: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all 300ms ease;
+}
+
+.userinfo-avatar {
+    width: 100rpx;
+    height: 100rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+}
+
+.userinfo-nickname {
+    font-size: 32rpx;
+    color: #007AFF;
+}
+
+.uploader, .tunnel {
+    height: auto;
+    padding: 0 0 0 40rpx;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.uploader-text, .tunnel-text {
+    width: 100%;
+    line-height: 52px;
+    font-size: 34rpx;
+    color: #007AFF;
+}
+
+.uploader-container {
+    width: 100%;
+    height: 100%;
+    padding: 20rpx 20rpx 20rpx 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.uploader-image {
+    width: 100%;
+    height: 360rpx;
+}
+
+.tunnel {
+    padding: 0 0 0 40rpx;
+}
+
+.tunnel-text {
+    position: relative;
+    color: #222;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.tunnel-text:first-child {
+    border-top: none;
+}
+
+.tunnel-switch {
+    position: absolute;
+    right: 20rpx;
+    top: -2rpx;
+}
+
+.disable {
+    color: #888;
+}
+
+.service {
+    position: fixed;
+    right: 40rpx;
+    bottom: 40rpx;
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 50%;
+    background: linear-gradient(#007AFF, #0063ce);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    transition: all 300ms ease;
+}
+
+.service-button {
+    position: absolute;
+    top: 40rpx;
+}
+
+.service:active {
+    box-shadow: none;
+}
+
+.request-text {
+    padding: 20rpx 0;
+    font-size: 24rpx;
+    line-height: 36rpx;
+    word-break: break-all;
+}
+.map-title{
+  color: #8d8d8d;
+  font-size: 32rpx;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+} 
+
+.map_content{
+  width: 100%;
+  background-color: none;
+  display: flex;
+  justify-content: center;
+  font-size: 25rpx;
+  color: #CD4F39;
+  margin-bottom: 10px;
+}
+
+.flex
+{
+  display: flex;
+  width:100%;
+  color: #ffffff;
+  /* height: 100px; */
+}
+.item{
+  padding: 5px;
+  background-color: #fff;
+  color: #787878;
+ /**border-top: 1px solid #787878; 上横线**/ 
+ /**border-bottom: 1px solid  #787878;下横线**/
+}
+
+.margin-bott{
+  margin-bottom: 10px;
+}
+.margin_top{
+  /* padding-top: -12px; */
+   margin-top: -12px; 
+}
+.item image
+{
+  display: block;
+  width:65px;
+  /* height:95px; */
+  overflow: hidden;
+}
+ 
+.item-middle
+{
+  flex:1;
+  margin-left:10px;
+  padding-top: 5px;  
+}
+.item-middle .title
+{
+  font-size: 10px;
+  color:chocolate;
+}
+.item-middle .sub-title
+{
+  font-size: 10px;
+  color:blue;
+  margin: 2px;
+}
+.item-middle .actor
+{
+  font-size: 23px;
+  color:blueviolet;  
+}
+
+.item-right .score
+{
+  font-size: 12px;
+  color:red;
+}
+.item-right .action
+{
+  margin-top: 30px;
+  border:1px solid #29cc6d;
+  color:cadetblue;
+  display: inline-block;
+  padding: 2px 4px;
+  font-size: 14px;
+  border-radius: 8px; /**半角的显示：数越大显示的幅度就越大**/
+}
+
+.swiper {
+  height: 400rpx;
+  width: 100%;
+}
+.swiper image {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* 热点 */
+.hot_scroll{
+    padding: 5px 5px 5px 0;
+    width:100%;
+}
+.hot{
+
+}
+.hot_title{
+    width: 50px;
+    box-sizing: border-box;
+    margin-right:10px;
+}
+.hot_title text{
+    display: block;
+    height:30px;
+    margin-top:10px;
+    border-left:4px solid red;
+    color: #d80000;
+    line-height:30px;
+    font-size: 14px;
+    text-align: right;
+    position: relative;
+}
+.hot_title text:before{
+    position: absolute;
+    left: -2px;
+    top: 50%;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #e33;
+    content: "";
+    margin-top: -10px;
+}
+.hot_list{
+    height:50px;
+    width: 100%;
+}
+.hot_list_text{
+    font-size: 14px;
+    color: #999;
+}
+
+/*****************************   分类  *****************************/
+.category{
+    border-bottom:1rpx solid #E0E0E0;
+    overflow: hidden;
+}
+.category_item{
+    float: left;
+    width:25%;
+    text-align: center;
+    overflow: hidden;
+    height: 50px;
+    margin:5px 0;
+}
+.category_logo{
+    width :35px;
+    height:35px;
+}
+.category_item_btn{
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+}
+.category_item_btn text{
+    font-size: 14px;
+    color: #666;
+}

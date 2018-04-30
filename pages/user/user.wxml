@@ -1,0 +1,89 @@
+<view class="setting_page">
+	<view class="page__bd">
+
+	    <view class="weui-cells weui-cells_after-title">
+	            <view class='user_info_box'>
+	            	<image src="{{avatar}}" class='user_info_avatar'/>
+	            	<view class='user_info_nickname'>{{nickname}}</view>
+	            </view>
+
+
+	        <view class='setting_page_tab'>
+	        	<view 
+	        		class='setting_tab_item'
+	        		data-url='../order_form/order_form?id={{item.id}}'
+	        		wx:for='{{order_tab}}' wx:key='item.id'
+	        		bindtap='goto'
+	        	>
+
+	        		<view><i class="iconfont icon-{{item.icon}}"></i></view>
+	        		<view class='ourder_tab_title'>{{item.name}}</view>
+	        	</view>	
+	        </view>	
+
+	        <view class="weui-cell weui-cell_access"
+	        	data-url='../order_form/order_form'
+	        	bindtap='goto'
+	        >
+	            <view class="weui-cell__bd">
+	                <view style="display: inline-block; vertical-align: middle">
+	                	<i class="iconfont icon-wodedingdan"></i>
+	                	我的订单
+	                </view>
+	                <view class="weui-badge" style="margin-left: 5px;">1</view>
+	            </view>
+	            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+	        </view>
+
+
+	        <view class="weui-cell weui-cell_access">
+
+	            <view class="weui-cell__bd">
+	                <view style="display: inline-block; vertical-align: middle">
+	                	<i class="iconfont icon-wodeyouhuiquan"></i>
+	                我的优惠卷</view>
+	                <!-- <view class="weui-badge" style="margin-left: 5px;">New</view> -->
+	            </view>
+	            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+	        </view>
+
+
+
+	        <view class="weui-cell weui-cell_access">
+
+	            <view class="weui-cell__bd">
+	                <view style="display: inline-block; vertical-align: middle">
+	                	<i class="iconfont icon-shouhuodizhi"></i>
+	                收货地址</view>
+	                <!-- <view class="weui-badge" style="margin-left: 5px;">New</view> -->
+	            </view>
+	            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+	        </view>
+	    </view>
+
+	    <view class="weui-cells__title"></view>
+
+
+	    <!-- 关于我们 -->
+			<view class="weui-cells weui-cells_after-title">
+
+	        <view 
+	        	class="weui-cell weui-cell_access"
+	        	data-url='../my/my'
+	        	bindtap='goto'
+	        >
+	            <view class="weui-cell__bd">
+	                <view style="display: inline-block; vertical-align: middle">
+										<i class="iconfont icon-emoji"></i>
+	                关于我们</view>
+	            </view>
+	            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+	        </view>
+	    </view>
+
+	</view>
+
+<!-- 	<view class="weui-footer">
+  	<view class="weui-footer__text">Copyright © 2018-2020 新视野</view>
+	</view> -->
+</view>

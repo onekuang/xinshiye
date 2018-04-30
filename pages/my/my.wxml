@@ -1,0 +1,226 @@
+<view class='article_banner'>
+  <image class='article_img'
+     src="../../image/xinshiye.jpg"/>
+</view>
+
+
+
+
+
+
+  <view class="weui-tab">
+      <view class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="*this">
+              <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                  <view class="weui-navbar__title">{{item}}</view>
+              </view>
+          </block>
+          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+
+         <!-- 选项卡1 -->
+          <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+
+            <view class="weui-article">
+
+                  <view class="my_ab_box">
+                    <view class="weui-article__h1 my_about">关于我们</view>
+                    <text>\n</text>
+                    <view class="weui-article__h1 my_about2">ABOUT US</view>
+                    <view class='my_line'></view>
+                  </view>
+                  <view class="weui-article__section">
+                      <!-- <view class="weui-article__title my_title">新视野网络</view> -->
+                          <!-- <view class="weui-article__h3">1.1 节标题</view> -->
+                          <view class="weui-article__p content">
+                            <text decode="{{true}}">
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;东莞市新视野网络科技有限公司成立于2014年（简称：新视野网络），是一家融合专业及创新经营理念的现代化互联网公司。\n
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新视野网络由技术研发、市场调研、客户服务、市场营销及品牌营运中心组成，整合行业优质资源和专业人才，用心为客户 解决了网络营销难，企业管理难及用人难的问题。新视野人用行动和正确的社会价值观吸引了一批积极上进，富有激情和梦想的青年加入，为新视野网络长远发展打下了坚实的基础。\n
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新视野网络经过三年时间的努力在系统定制开发、项目一站式营运、营销管理培训领域取得了不错的成果和好评。真正为中小企业解决营销难，管理难，用人难的诉求，专注为社会创造价值。\n
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新视野网络未来的五年发展目标：用心服务1000家企业、成立四家分子公司、年净利润超过2000万、市值超过1亿。\n
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新视野人长期艰苦奋斗，肩负用为中小企业服务，全力推动中小企业繁荣发展，促进社会人才高效就业的伟大使命而自豪。
+                            </text>
+                          </view>
+                  </view>
+            </view>
+
+          </view>
+
+          <!-- 选项卡2 -->
+          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+            <view class="weui-article">
+              
+              <view class="my_ab_box">
+                <view class="weui-article__h1 my_about">企业文化</view>
+                <text>\n</text>
+                <view class="weui-article__h1 my_about2">
+                  CULTURE
+                </view>
+                <view class='my_line'></view>
+              </view>
+
+              <view class="weui-article__section">
+                <view class="weui-article__h1">经营理念</view>
+                <view class="weui-article__p content">
+                  <text>诚信、专业、合作、创新</text>
+                </view>
+              </view>
+
+              <view class="weui-article__section">
+                <view class="weui-article__h1">企业愿景</view>
+                <view class="weui-article__p content">
+                  <text>用心为中心企业服务，\n</text>
+                  <text>专注为社会创造价值。</text>
+                </view>
+              </view>
+
+              <view class="weui-article__section">
+                <view class="weui-article__h1">核心价值观</view>
+                <view class="weui-article__p content">
+                  <text>以客户为中心，</text>
+                  <text>以奋斗者为本。\n</text>
+                  <text>长期艰苦奋斗，</text>
+                  <text>坚持自我批评。</text>
+                </view>
+              </view> 
+
+              <view class="weui-article__section">
+                <view class="weui-article__h1">行为理念</view>
+                <view class="weui-article__p content">
+                  <text>专业态度、不断进步、团队合作</text>
+                </view>
+              </view>
+
+              <view class="weui-article__section">
+                <view class="weui-article__h1">企业理念</view>
+                <view class="weui-article__p content">
+                  <text>让中小企业--不在苦恼</text>
+                  <text>\n让中小企业--不在无助</text>
+                  <text>\n让中小企业--更有尊严</text>
+                  <text>\n让中小企业--更加系统</text>
+                </view>
+              </view>
+
+
+
+            </view>
+          </view>
+
+          <!-- 选项卡3 -->
+          <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+            <view class="weui-article">
+
+                <view class="weui-article__section">
+                    <view class="weui-article__p">
+
+                        <view class="zan-font-12 zan-c-gray-darker my_phone k_line">
+                         <text>公司座机： {{phone}}</text>
+                        
+                          <view 
+                            class="k_btn"
+                            data-phone='{{phone}}'
+                            bindtap='contact'  
+                          >
+                            <i class="iconfont icon-dianhua"></i> 
+                          </view>
+                        </view>
+
+                        <view class="zan-font-12 zan-c-gray-darker my_phone k_line">
+                         <text>业务电话： {{phone2}}</text>
+
+                          <view 
+                            class="k_btn"
+                            data-phone='{{phone2}}'
+                            bindtap='contact'  
+                          >
+                            <i class="iconfont icon-dianhua1"></i> 
+                          </view>
+
+                        </view>
+
+                        <view class="zan-font-12 zan-c-gray-darker my_site k_line">
+                         <text>公司邮箱： jony1_xsygood@163.com</text>
+                        </view>
+
+                        <view class="zan-font-12 zan-c-gray-darker my_site k_line">
+                         <text>公司地址： 东莞市南城区莞太路鸿禧商业大厦603</text>
+                        </view>
+          
+                    </view>
+                </view>
+
+
+                <map id="map4select"
+                  longitude="{{longitude}}" latitude="{{latitude}}" 
+                  markers="{{markers}}"
+                  scale="20" 
+                  style="width:{{map_width}};height:{{map_height}}px"
+                  bindregionchange="regionchange"
+                  controls="{{controls}}"
+                  bindtap="click">
+                </map>
+            </view>
+          </view>
+      </view>
+  </view>
+
+<!-- <view class="weui-article">
+
+    <view class="my_ab_box">
+      <view class="weui-article__h1 my_about">关于我们</view>
+      <text>\n</text>
+      <view class="weui-article__h1 my_about2">新视野网络</view>
+      <view class='my_line'></view>
+    </view>
+    <view class="weui-article__section">
+        <view class="weui-article__section">
+            <view class="weui-article__p content" style="text-indent: 2em;">
+                东莞市新视野网络科技有限公司成立于2014年（简称：新视野网络），我们是一家融合专业和创新经营理念的互联网公司。团队由多位网络营销实战人士构成，形成了专业的专家顾问团队。并且吸引了一批积极上进，有激情、有梦想的青年加入我们的团队，具有良好的团队精神。
+            </view>
+        </view>
+        <view class="weui-article__section">
+            <view class="weui-article__h3 my_h3">联系我们</view>
+            <view class="weui-article__p">
+                <view class="zan-font-12 zan-c-gray-darker my_site">
+                 公司地址：东莞市南城区莞太路鸿禧商业大厦603
+                </view>
+                <view class="zan-font-12 zan-c-gray-darker my_phone" style="margin:8px 0 0 0">
+                 联系电话： {{phone}}
+                 <button class="zan-btn zan-btn--mini zan-btn--primary zan-btn--plain"
+                    style="margin-left:16px;"
+                    bindtap='contact'
+                >联系我们</button>
+                </view>
+
+            </view>
+        </view>
+    </view>
+
+
+    <map id="map4select"
+      longitude="{{longitude}}" latitude="{{latitude}}" 
+      markers="{{markers}}"
+      scale="20" 
+      style="width:{{map_width}};height:{{map_height}}px"
+      bindregionchange="regionchange"
+      controls="{{controls}}"
+      bindtap="click">
+    </map>
+</view> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view class="weui-footer">
+  <view class="weui-footer__text">Copyright © 2018-2020 新视野</view>
+</view>

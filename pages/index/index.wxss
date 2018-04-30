@@ -1,0 +1,29 @@
+/*@import '../templates/mune/mune.wxss'*/
+@import '../templates/leave/leave.wxss'
+@import '../templates/links/links.wxss'
+@import '../templates/case/case.wxss'
+
+
+.index_page{
+  background: #eee;
+  overflow-x: hidden;
+}
+
+
+/* 轮播 */
+.slide-image{
+	width: 100%;
+	height: 150px;
+}
+
+/* 首页案例 */
+
+
+
+/* 组件 */
+.k_more{
+	/*color: #888;*/
+	/*padding: 6px 5px;*/
+	border-bottom: 1px solid #eee;
+}
+

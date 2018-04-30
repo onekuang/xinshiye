@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="map">
+      <image 
+        class="img" bindload="imageLoad"
+        src="../image/newview-logo-1.jpg"
+      ></image>
+      <view> <text class="map-title" >新视野网络科技有限公司</text></view>
+      <view class="flex item">
+        
+        <view  class="item-left">
+          <image src="../image/font-522.png" class="margin-bott" style="width: 20px; height: 20px;"></image>
+        </view>
+         <view class="item-middle">
+         
+
+
+          <view style="margin-top:10px;"><text class="map_content margin_top" >广东省东莞市莞太大道篁村路段23号603室</text></view>
+        </view>
+       
+        
+       
+      </view>
+
+
+        </view>
+
+  <map id="map4select"
+  longitude="{{longitude}}" latitude="{{latitude}}" 
+  markers="{{markers}}"
+  scale="20" 
+  style="width:{{map_width}}px;height:{{map_height}}px"
+  bindregionchange="regionchange"
+  controls="{{controls}}">
+  </map>
+</view>

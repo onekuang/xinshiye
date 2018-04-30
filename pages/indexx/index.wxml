@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<view class="container" >
+    <!-- 用户登录测试 -->
+
+        
+<swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
+      <block wx:for="{{movies}}" wx:key="index" wx:for-index="index">    
+        <swiper-item>    
+          <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
+        </swiper-item>    
+      </block>    
+    </swiper>    
+
+
+<!--  分类  -->
+    <view class="category">
+        <view wx:for="{{ category }}" wx:key="item" class="category_item">
+            <navigator url="{{ item.url }}" hover-class="navigator-hover">
+                <view class="flex column category_item_btn">
+                    <image src="{{ item.img }}" class="category_logo"></image>
+                    <text>{{ item.text }}</text>
+                </view>
+            </navigator>
+        </view>
+    </view>
+
+
+   <text class="Main-dsc">
+   <text class='dsc1'>  用心为中小企业服务。 \n\n </text> 
+   <text class='dsc2'> ——新视野网络有限公司 </text> 
+   </text> 
+  
+
+    <view class="map">
+    
+      
+      <view class="flex">
+        
+        <view  class="item-left">
+          <image src="../image/font-522.png" class="margin-bott" style="width: 20px; height: 20px; margin-top:15px"></image>
+        </view>
+         <view class="item-middle">
+          <view class="address" style="margin-top:10px;">广东省东莞市莞太大道篁村路段23号603室</view>
+        </view>
+      </view>
+    </view>
+
+
+  <map id="map4select"
+  longitude="{{longitude}}" latitude="{{latitude}}" 
+  markers="{{markers}}"
+  scale="20" 
+  style="width:{{map_width}}px;height:{{map_height}}px"
+  bindregionchange="regionchange"
+  controls="{{controls}}"
+  bindtap="click">
+  </map>
+</view>

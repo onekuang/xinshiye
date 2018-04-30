@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "k_mune": "../templates/mune/mune"
+  }
+}

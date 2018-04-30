@@ -1,0 +1,59 @@
+<view class="article">
+    <image src="https://www.xsygood.com/wximage/article01.jpg" style="width:100%;" />
+    <view class="page__hd">
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h1">什么是微站?</view>
+            <view class="weui-article__section">
+                <!-- <view class="weui-article__title">小标题</view> -->
+                <view class="weui-article__section">
+                    <!-- <view class="weui-article__h3">什么是微站</view> -->
+                    <view class="weui-article__p" style="text-indent: 1em;">
+                        <text>    
+                        微站，是移动互联网时代的新概念，伴随着智能手机等移动微站终端的普及而产生，是移动互联网时代企业基础应用平台和移动门户，也是移动互联网统一数据入口。\n
+                        微站，可以快速构建手机网站、生成手机客户端APP的功能，并集成与微信、微博、二维码的数据接口，实现企业信息化管理与移动互联网技术的结合。企业可以在微站这个平台上，集成在线客服系统、在线商城、短信系统、企业CRM系统等多平台，并可以扩展出多种移动应用，例如微调查、微活动、微商城、抽奖、会员管理等。微站，\n
+                        可以帮助企业进行信息同步分享并传播，整合企业网络营销推广的要求，提升企业营销的精准性，扩大营销的互动性，放大企业信息传播效应，从而提高企业品牌的商业价值。
+                        </text>
+                    </view>
+                    <view class="weui-article__p">
+                        <image class="weui-article__img" src="https://www.xsygood.com/wximage/C-3.jpg" mode="aspectFit" style="height: 180px;width:100%;" />
+                    </view>
+                </view>
+
+            </view>
+
+            <view class="weui-article__h1">我们能帮您做什么?</view>
+            <view class="weui-article__section">
+                <!-- <view class="weui-article__title">小标题</view> -->
+                <view class="weui-article__section">
+                    <!-- <view class="weui-article__h3">什么是微站</view> -->
+                    <view class="weui-article__p">
+                        <text>    
+                        \t\t东莞市新视野网络科技有限公司成立于2014年（简称：新视野网络），
+                        是一家融合专业及创新经营理念的现代化互联网公司。\n
+                        \t\t新视野网络由技术研发、市场调研、客户服务、市场营销及品牌营运中心组成，整合行业优质资源和专业人才，用心为客户 解决了网络营销难，企业管理难及用人难的问题。新视野人用行动和正确的社会价值观吸引了一批积极上进，富有激情和梦想的青年加入，为新视野网络长远发展打下了坚实的基础。\n
+                        \t\t新视野网络经过三年时间的努力在系统定制开发、项目一站式营运、营销管理培训领域取得了不错的成果和好评。真正为中小企业解决营销难，管理难，用人难的诉求，专注为社会创造价值。\n
+                        \t\t新视野网络未来的五年发展目标：用心服务1000家企业、成立四家分子公司、年净利润超过2000万、市值超过1亿。\n
+                        \t\t新视野人长期艰苦奋斗，肩负用为中小企业服务，全力推动中小企业繁荣发展，促进社会人才高效就业的伟大使命而自豪。
+                        </text>
+                    </view>
+                    <view class="weui-article__p">
+                        <image class="weui-article__img" src="https://www.xsygood.com/wximage/C-6.jpg" mode="aspectFit" style="height: 180px;width:100%;" />
+                    </view>
+                </view>
+                
+            </view>
+        </view>
+    </view>
+
+
+    <view class='footer'>
+        <view class="weui-footer">
+        <view class="weui-footer__text">Copyright © 2018-2020 新视野网络科技</view>
+        </view>
+    </view>
+
+
+
+</view>

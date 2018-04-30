@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/goods/goods",
+    "pages/user/user",
+    "pages/order_pay/order_pay",
+    "pages/order_form/order_form",
+    "pages/goods_list/goods_list",
+    "pages/start/start",
+    "pages/my/my",
+    "pages/shoppingCar/shoppingCar",
+    "pages/article/article"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#333333",
+    "navigationBarTitleText": "新视野网络科技",
+    "navigationBarTextStyle": "white"
+  },
+   "tabBar": {
+        "color": "#a9b7b7",
+        "selectedColor": "#50B3E4",
+        "borderStyle": "black",
+        "list": [
+      {
+              "selectedIconPath": "image/home_active.png",
+              "iconPath": "image/home.png",
+              "pagePath": "pages/index/index",
+              "text": "首页"  
+
+      },
+      {
+              "selectedIconPath": "image/goods_s.png",
+              "iconPath": "image/goods.png",
+              "pagePath": "pages/goods_list/goods_list",
+              "text": "商品列表"  
+
+      },
+      {
+              "selectedIconPath": "image/car_s.png",
+              "iconPath": "image/car.png",
+              "pagePath": "pages/shoppingCar/shoppingCar",
+              "text": "购物车"  
+
+      },
+      {
+              "selectedIconPath": "image/my_active.png",
+              "iconPath": "image/my.png",
+              "pagePath": "pages/user/user",
+              "text": "个人中心"  
+      }
+    ]  
+  }
+}

@@ -1,0 +1,45 @@
+<view class='index_page'>
+
+<!-- 轮播 -->
+<swiper indicator-dots='{{true}}'
+  autoplay="true" interval="5000" duration="1000">
+  <block wx:for="{{imgUrls}}" wx:key="*this">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+
+<!-- 菜单组件 -->
+<k_mune id="k_mune" mune_data="{{mune_data}}"></k_mune>
+
+
+
+<!-- 公司案例 -->
+<import src='../templates/case/case.wxml' />
+<template is='k_case' data="{{case_list:case_list,title:'公司案例'}}"/>
+
+
+
+<!-- 友情链接 -->
+<import src='../templates/links/links.wxml' />
+<template is='links' data="{{links_data:links_data,title:'合作企业'}}"/>
+
+
+
+<!-- lave 留言-->
+<!-- <import src='../templates/leave/leave.wxml' />
+<template is='leave' data="{{text_cursor:text_cursor}}"/> -->
+
+
+<!-- footer -->
+<view class='footer'>
+	<view class="weui-footer">
+   		<view class="weui-footer__text">Copyright © 2018-2020 新视野网络科技</view>
+	</view>
+</view>
+
+
+</view><!-- index_page end -->

@@ -1,0 +1,82 @@
+/* pages/my/my.wxss */
+.article_img{
+  width: 100%;
+}
+.my_ab_box{
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+.my_line{
+	width: 500rpx;
+	height: 80rpx;
+	border: 1px solid #ccc;
+	position: absolute;
+	top: 35rpx;
+	left: 50%;
+	transform: translateX(-250rpx);
+	z-index: -1;
+}
+.my_about,.my_about2{
+	display: inline-block;
+	/* background: #000; */
+	width: 250rpx;
+	height: 80rpx;
+	background: #fff;
+}
+.my_about{
+	text-align: center;
+	font-size: 48rpx;
+	font-weight: 700;
+	margin-bottom: 0;
+	
+}
+.my_about2{
+	text-align: center;
+	font-size: 40rpx;
+	color: #585555;
+}
+.content{
+	color: #585555;
+	font-size: 32rpx;
+	line-height: 1.9;
+}
+.my_h3{
+	font-size: 40rpx;
+}
+.my_phone,.my_site{
+	font-size: 28rpx;
+}
+
+/*========================*/
+/* 重置框架的tabbar 选中颜色 */
+.weui-navbar__item.weui-bar__item_on{
+	color: #50B3E4;
+}
+.weui-navbar__slider{
+	background-color: #50B3E4;
+}
+.zan-btn--primary{
+	/* background-color: transparent; */
+	background-color: #50B3E4;
+}
+.zan-btn--primary .iconfont{
+	color: #fff;
+}
+.k_btn{
+	float: right;
+	margin-top: 5px;
+	display: inline-block;
+	height: 32px;
+	width: 32px;
+	text-align: center;
+	line-height: 32px;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	margin-right: 16px;
+	color: #888;
+}
+.k_line{
+	height: 42px;
+	line-height: 42px;
+}
