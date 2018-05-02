@@ -21,6 +21,9 @@ Page({
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
+
+    longitude:'',
+    latitude:''
     
   },
   // 拨打电话

@@ -45,14 +45,6 @@ Page(extend({}, Tab, {
         "count": 2,
         "status": "待付款",
         "money": 23333
-      },
-      {
-        "number": "98766543421",
-        "thumb": "../../image/logo_xs.png",
-        "name": "APP定制",
-        "count": 3,
-        "status": "已付款",
-        "money": 23333
       }
     ]
   },

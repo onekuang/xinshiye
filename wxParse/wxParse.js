@@ -140,7 +140,6 @@ function wxParseTemArray(temArrayName,bindNameReg,total,that){
   obj[temArrayName] = array;
   that.setData(obj);
 }
-
 /**
  * 配置emojis
  * 
@@ -152,8 +151,8 @@ function emojisInit(reg='',baseSrc="/wxParse/emojis/",emojis){
 
 module.exports = {
   wxParse: wxParse,
-  wxParseTemArray:wxParseTemArray,
-  emojisInit:emojisInit
+  wxParseTemArray:wxParseTemArray
+  // emojisInit:emojisInit
 }
 
 

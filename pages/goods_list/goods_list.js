@@ -1,11 +1,6 @@
 Page({
     data: {
-        category: [
-            {name:'软件开发',id:'ruanjian'},
-            {name:'网站开发',id:'wangzhan'},
-            {name:'test',id:'test'},
-        ],
-        detail:[
+        category:[
           {
               "id": "ruanjian",
               "banner": "https://www.xsygood.com/wximage/banner1.jpg",
@@ -26,44 +21,22 @@ Page({
                       "thumb": "../../image/logo.png",
                       "name": "微信公众号"
                   },
-                  {
-                      "id":"4",
-                      "thumb": "../../image/logo.png",
-                      "name": "test"
-                  },
               ]
           },
           {
-              "id": "wangzhan",
+              "id": "oaxitong",
               "banner": "https://www.xsygood.com/wximage/banner1.jpg",
-              "cate": "网站开发",
+              "cate": "OA系统",
               "detail": [
                   {
                       "id":"5",
                       "thumb": "../../image/logo.png",
-                      "name": "企业网站"
+                      "name": "OA系统1"
                   },
                   {
                       "id":"6",
                       "thumb": "../../image/logo.png",
-                      "name": "营销网站"
-                  },
-              ]
-          },
-          {
-              "id": "test",
-              "banner": "https://www.xsygood.com/wximage/banner1.jpg",
-              "cate": "test",
-              "detail": [
-                  {
-                      "id":"7",
-                      "thumb": "../../image/logo.png",
-                      "name": "企业网站"
-                  },
-                  {
-                      "id":"8",
-                      "thumb": "../../image/logo.png",
-                      "name": "营销网站"
+                      "name": "OA系统2"
                   },
               ]
           },

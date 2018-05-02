@@ -21,7 +21,8 @@
 	        	</view>	
 	        </view>	
 
-	        <view class="weui-cell weui-cell_access"
+	        <view 
+	        	class="weui-cell weui-cell_access"
 	        	data-url='../order_form/order_form'
 	        	bindtap='goto'
 	        >
@@ -36,7 +37,11 @@
 	        </view>
 
 
-	        <view class="weui-cell weui-cell_access">
+	        <view 
+	        	class="weui-cell weui-cell_access"
+	        	data-url='../mycoupons/index'
+	        	bindtap='goto'
+	        >
 
 	            <view class="weui-cell__bd">
 	                <view style="display: inline-block; vertical-align: middle">
@@ -49,7 +54,10 @@
 
 
 
-	        <view class="weui-cell weui-cell_access">
+	        <view class="weui-cell weui-cell_access"
+	        	data-url='../select-address/index'
+	        	bindtap='goto'
+	        >
 
 	            <view class="weui-cell__bd">
 	                <view style="display: inline-block; vertical-align: middle">

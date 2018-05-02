@@ -10,21 +10,18 @@ Page({
       'https://www.xsygood.com/wximage/banner1.jpg',
       'https://www.xsygood.com/wximage/banner2.jpg'
     ],
+    shopCarInfo:{},
+    shopNum:0,
+    hideShopPopup:true,
+    buyNumber:0,
+    buyNumMin:1,
+    buyNumMax:0,
     // 商品data
     goodsDetail: {
       basicInfo:{
-        // name:'APP定制',
-        // commission:'500',
-        // commissionType:1,
-        // 缩列图
-        // pic:'../../image/logo.png',
-        // 购买次数
-        // numberOrders:'333',
-        // 好评
-        // numberGoodReputation:244,
         barCode: "",
         categoryId: 2246,
-        characteristic: "尼多熊袜子，适合秋冬天",
+        characteristic: "高端定制",
         commission: 5,
         commissionType: 2,
         dateAdd: "2017-10-30 10:44:23",
@@ -40,7 +37,7 @@ Page({
         numberOrders: 16,
         originalPrice: 0,
         paixu: 0,
-        pic: "https://cdn.it120.cc/apifactory/2017/10/30/bc15e96f20fb13cc7d35f90d743ccb17.jpg",
+        pic: "https://www.xsygood.com/wximage/logo.png",
         recommendStatus: 0,
         recommendStatusStr: "普通",
         shopId: 0,
@@ -57,7 +54,6 @@ Page({
           name:'优惠套餐',
           "dateAdd": "2017-09-12 21:03:40",
           "id": 871,
-          "name": "颜色",
           "paixu": 0,
           "userId": 951,
           "childsCurGoods": [
@@ -83,10 +79,8 @@ Page({
         }
       ],
     },
-
-
     // 价格
-    selectSizePrice:2333,
+    selectSizePrice:23333,
 
     // 评价
     reputation:[
@@ -125,6 +119,9 @@ Page({
     buyNumMin:1,
     buyNumMax:5,
     buyNumber: 1,
+
+    propertyChildIds:"",
+    propertyChildNames:"",
     //购物类型，加入购物车或立即购买，默认为加入购物车
     shopType: "addShopCar",
   },
@@ -168,6 +165,14 @@ Page({
     if (needSelectNum == curSelectNum) {
       canSubmit = true;
     }
+
+    that.setData({
+        // selectSizePrice:res.data.data.price,
+        propertyChildIds:propertyChildIds,
+        propertyChildNames:propertyChildNames,
+        // buyNumMax:res.data.data.stores,
+        // buyNumber:(res.data.data.stores>0) ? 1: 0
+      });
     // 计算当前价格
     // if (canSubmit) {
     //   wx.request({
@@ -224,7 +229,51 @@ Page({
         })  
      }
   },
+  /**
+   * 组建购物车信息
+   */
+  bulidShopCarInfo: function () {
+    // 加入购物车
+    var shopCarMap = {};
+    shopCarMap.goodsId = this.data.goodsDetail.basicInfo.id;
+    shopCarMap.pic = this.data.goodsDetail.basicInfo.pic;
+    shopCarMap.name = this.data.goodsDetail.basicInfo.name;
+    // shopCarMap.label=this.data.goodsDetail.basicInfo.id; 规格尺寸 
+    shopCarMap.propertyChildIds = this.data.propertyChildIds;
+    shopCarMap.label = this.data.propertyChildNames;
+    shopCarMap.price = this.data.selectSizePrice;
+    shopCarMap.left = "";
+    shopCarMap.active = true;
+    shopCarMap.number = this.data.buyNumber;
+    shopCarMap.logisticsType = this.data.goodsDetail.basicInfo.logisticsId;
+    shopCarMap.logistics = this.data.goodsDetail.logistics;
+    shopCarMap.weight = this.data.goodsDetail.basicInfo.weight;
 
+    var shopCarInfo = this.data.shopCarInfo;
+    if (!shopCarInfo.shopNum) {
+      shopCarInfo.shopNum = 0;
+    }
+    if (!shopCarInfo.shopList) {
+      shopCarInfo.shopList = [];
+    }
+    var hasSameGoodsIndex = -1;
+    for (var i = 0; i < shopCarInfo.shopList.length; i++) {
+      var tmpShopCarMap = shopCarInfo.shopList[i];
+      if (tmpShopCarMap.goodsId == shopCarMap.goodsId && tmpShopCarMap.propertyChildIds == shopCarMap.propertyChildIds) {
+        hasSameGoodsIndex = i;
+        shopCarMap.number = shopCarMap.number + tmpShopCarMap.number;
+        break;
+      }
+    }
+
+    shopCarInfo.shopNum = shopCarInfo.shopNum + this.data.buyNumber;
+    if (hasSameGoodsIndex > -1) {
+      shopCarInfo.shopList.splice(hasSameGoodsIndex, 1, shopCarMap);
+    } else {
+      shopCarInfo.shopList.push(shopCarMap);
+    }
+    return shopCarInfo;
+  },
 
 
 /**
@@ -250,12 +299,17 @@ addShopCar:function(){
     return;
   }
   //组建购物车
-  // var shopCarInfo = this.bulidShopCarInfo();
-
-  // this.setData({
-  //   shopCarInfo:shopCarInfo,
-  //   shopNum:shopCarInfo.shopNum
-  // });
+  var shopCarInfo = this.bulidShopCarInfo();
+  console.log(shopCarInfo)
+  this.setData({
+    shopCarInfo:shopCarInfo,
+    shopNum:shopCarInfo.shopNum
+  });
+  // 写入本地存储
+  wx.setStorage({
+    key:"shopCarInfo",
+    data:shopCarInfo
+  })
 
   this.closePopupTap();
   wx.showToast({
@@ -307,8 +361,20 @@ tobuy() {
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
     console.log(options)
     WxParse.wxParse('article', 'html', this.data.text, this, 5);
+
+    // 获取购物车数据
+    wx.getStorage({
+      key: 'shopCarInfo',
+      success: function(res) {
+        that.setData({
+          shopCarInfo:res.data,
+          shopNum:res.data.shopNum
+        });
+      } 
+    })
   },
 
   /**

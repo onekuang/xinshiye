@@ -1,6 +1,6 @@
 <view class='article_banner'>
   <image class='article_img'
-     src="../../image/xinshiye.jpg"/>
+     src="https://www.xsygood.com/wximage/xinshiye.jpg"/>
 </view>
 
 
@@ -164,51 +164,6 @@
           </view>
       </view>
   </view>
-
-<!-- <view class="weui-article">
-
-    <view class="my_ab_box">
-      <view class="weui-article__h1 my_about">关于我们</view>
-      <text>\n</text>
-      <view class="weui-article__h1 my_about2">新视野网络</view>
-      <view class='my_line'></view>
-    </view>
-    <view class="weui-article__section">
-        <view class="weui-article__section">
-            <view class="weui-article__p content" style="text-indent: 2em;">
-                东莞市新视野网络科技有限公司成立于2014年（简称：新视野网络），我们是一家融合专业和创新经营理念的互联网公司。团队由多位网络营销实战人士构成，形成了专业的专家顾问团队。并且吸引了一批积极上进，有激情、有梦想的青年加入我们的团队，具有良好的团队精神。
-            </view>
-        </view>
-        <view class="weui-article__section">
-            <view class="weui-article__h3 my_h3">联系我们</view>
-            <view class="weui-article__p">
-                <view class="zan-font-12 zan-c-gray-darker my_site">
-                 公司地址：东莞市南城区莞太路鸿禧商业大厦603
-                </view>
-                <view class="zan-font-12 zan-c-gray-darker my_phone" style="margin:8px 0 0 0">
-                 联系电话： {{phone}}
-                 <button class="zan-btn zan-btn--mini zan-btn--primary zan-btn--plain"
-                    style="margin-left:16px;"
-                    bindtap='contact'
-                >联系我们</button>
-                </view>
-
-            </view>
-        </view>
-    </view>
-
-
-    <map id="map4select"
-      longitude="{{longitude}}" latitude="{{latitude}}" 
-      markers="{{markers}}"
-      scale="20" 
-      style="width:{{map_width}};height:{{map_height}}px"
-      bindregionchange="regionchange"
-      controls="{{controls}}"
-      bindtap="click">
-    </map>
-</view> -->
-
 
 
 

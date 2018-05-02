@@ -77,7 +77,7 @@ App({
   },
   
   globalData: {
-    userInfo: null
-    , locationInfo: null
+    userInfo: null, 
+    locationInfo: null
   }
 })

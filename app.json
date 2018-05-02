@@ -1,14 +1,17 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/goods/goods",
     "pages/user/user",
+    "pages/mycoupons/index",
+    "pages/my/my",
+    "pages/goods/goods",
     "pages/order_pay/order_pay",
     "pages/order_form/order_form",
     "pages/goods_list/goods_list",
     "pages/start/start",
-    "pages/my/my",
     "pages/shoppingCar/shoppingCar",
+    "pages/select-address/index",
+    "pages/address-add/index",
     "pages/article/article"
   ],
   "window": {

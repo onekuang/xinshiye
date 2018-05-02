@@ -12,9 +12,9 @@ Page({
     ]
   },
   // tab点击调转对应的订单
-  goto(e) {
-    let url = e.currentTarget.dataset.url;
-  },
+  // goto(e) {
+  //   let url = e.currentTarget.dataset.url;
+  // },
 
   // 跳转到关于我们
   goto(e) {
