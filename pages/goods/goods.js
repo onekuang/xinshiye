@@ -5,6 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    goods_id :'',
+    // 分享出去的标题和图片
+    share_title: "中小企业利器,OA系统",
+    share_img: "https://www.xsygood.com/wximage/banner2.jpg",
     // 轮播
     imgUrls: [
       'https://www.xsygood.com/wximage/banner1.jpg',
@@ -53,30 +57,30 @@ Page({
         {
           name:'优惠套餐',
           "dateAdd": "2017-09-12 21:03:40",
-          "id": 871,
+          "id": 111,
           "paixu": 0,
           "userId": 951,
           "childsCurGoods": [
             {
               "dateAdd": "2017-09-12 21:03:56",
-              "id": 1589,
+              "id": 1,
               "name": "套餐1",
               "paixu": 0,
-              "propertyId": 871,
+              "propertyId": 111,
               "remark": "",
               "userId": 951
             },
             {
               "dateAdd": "2017-09-13 09:51:06",
-              "id": 1598,
+              "id": 2,
               "name": "套餐2",
               "paixu": 0,
-              "propertyId": 871,
+              "propertyId": 111,
               "remark": "",
               "userId": 951
             },
           ]
-        }
+        },
       ],
     },
     // 价格
@@ -113,7 +117,7 @@ Page({
     // 购物车是否隐藏
     hideShopPopup:true,
 
-    text:"产品图文介绍占位符...",
+    text:"产品图文介绍...",
 
     // 加入购物车内
     buyNumMin:1,
@@ -125,6 +129,8 @@ Page({
     //购物类型，加入购物车或立即购买，默认为加入购物车
     shopType: "addShopCar",
   },
+
+
 
   /**
    * 选择商品规格
@@ -330,10 +336,93 @@ goShopCar() {
 
 // 立即购买
 tobuy() {
-  wx.navigateTo({
-    url:'../order_pay/order_pay'
-  })
+  console.log(123)
+  this.setData({
+    shopType: "tobuy"
+  });
+  this.bindGuiGeTap()
+  // wx.navigateTo({
+  //   url:'../order_pay/order_pay'
+  // })
 },
+/**
+   * 规格选择弹出框
+   */
+bindGuiGeTap: function() {
+  this.setData({  
+    hideShopPopup: false 
+  })  
+},
+/**
+    * 立即购买
+    */
+buyNow:function(){
+  if (this.data.goodsDetail.properties && !this.data.canSubmit) {
+    if (!this.data.canSubmit) {
+      wx.showModal({
+        title: '提示',
+        content: '请选择商品规格！',
+        showCancel: false
+      })
+    }
+    this.bindGuiGeTap();
+    wx.showModal({
+      title: '提示',
+      content: '请先选择规格尺寸哦~',
+      showCancel:false
+    })
+    return;
+  }    
+  if(this.data.buyNumber < 1){
+    wx.showModal({
+      title: '提示',
+      content: '购买数量不能为0！',
+      showCancel:false
+    })
+    return;
+  }
+  //组建立即购买信息
+  var buyNowInfo = this.buliduBuyNowInfo();
+  console.log(buyNowInfo);
+  // 写入本地存储
+  wx.setStorage({
+    key:"buyNowInfo",
+    data:buyNowInfo
+  })
+  this.closePopupTap();
+  wx.navigateTo({
+    url: "../order_pay/order_pay?orderType=buyNow"
+  })    
+},
+  /**
+     * 组建立即购买信息
+     */
+buliduBuyNowInfo: function () {
+  var shopCarMap = {};
+  shopCarMap.goodsId = this.data.goodsDetail.basicInfo.id;
+  shopCarMap.pic = this.data.goodsDetail.basicInfo.pic;
+  shopCarMap.name = this.data.goodsDetail.basicInfo.name;
+  // shopCarMap.label=this.data.goodsDetail.basicInfo.id; 规格尺寸 
+  shopCarMap.propertyChildIds = this.data.propertyChildIds;
+  shopCarMap.label = this.data.propertyChildNames;
+  shopCarMap.price = this.data.selectSizePrice;
+  shopCarMap.left = "";
+  shopCarMap.active = true;
+  shopCarMap.number = this.data.buyNumber;
+  shopCarMap.logisticsType = this.data.goodsDetail.basicInfo.logisticsId;
+  shopCarMap.logistics = this.data.goodsDetail.logistics;
+  shopCarMap.weight = this.data.goodsDetail.basicInfo.weight;
+
+  var buyNowInfo = {};
+  if (!buyNowInfo.shopNum) {
+    buyNowInfo.shopNum = 0;
+  }
+  if (!buyNowInfo.shopList) {
+    buyNowInfo.shopList = [];
+  }
+  buyNowInfo.shopList.push(shopCarMap);
+  return buyNowInfo;
+},  
 
 
 
@@ -362,7 +451,24 @@ tobuy() {
    */
   onLoad: function (options) {
     var that = this
-    console.log(options)
+
+    that.setData({
+      goods_id : options.id
+    })
+
+    wx.request({
+      url:'https://api.it120.cc/tz/shop/goods/detail',
+      data:{
+        id: 4470
+        // id: that.data.goods_id
+      },
+      success: function(res) {
+        console.log(res)
+      }
+    })
+
+
+    // 初始化富文本
     WxParse.wxParse('article', 'html', this.data.text, this, 5);
 
     // 获取购物车数据
@@ -423,6 +529,24 @@ tobuy() {
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+      return {
+        title: this.data.share_title,
+        path: '/pages/goods/goods',
+        imageUrl: this.data.share_img,
+        success: function(res) {
+          wx.showToast({
+            title:'分享成功'
+          })
+          console.log(res)
+        },
+        fail: function(res) {
+          // 转发失败
+          wx.showToast({
+            title:'分享失败..',
+            icon:'none'
+          })
+          console.log(res)
+        }
+      }
   }
 })

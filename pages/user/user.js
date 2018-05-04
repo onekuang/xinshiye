@@ -5,16 +5,12 @@ Page({
 
     // 订单tab
     order_tab:[
-      {id:'topay',name:'待付款',icon:'pay',url:'##'},
-      {id:'tosend',name:'待发货',icon:'send',url:'##'},
-      {id:'send',name:'待收货',icon:'deliver',url:'##'},
-      {id:'sign',name:'待评价',icon:'wodefankui',url:'##'},
+      {id:'0',name:'待付款',icon:'pay',url:'##'},
+      {id:'1',name:'待发货',icon:'send',url:'##'},
+      {id:'2',name:'待收货',icon:'deliver',url:'##'},
+      {id:'3',name:'待评价',icon:'wodefankui',url:'##'},
     ]
   },
-  // tab点击调转对应的订单
-  // goto(e) {
-  //   let url = e.currentTarget.dataset.url;
-  // },
 
   // 跳转到关于我们
   goto(e) {

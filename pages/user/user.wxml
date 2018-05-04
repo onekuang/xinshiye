@@ -11,7 +11,7 @@
 	        <view class='setting_page_tab'>
 	        	<view 
 	        		class='setting_tab_item'
-	        		data-url='../order_form/order_form?id={{item.id}}'
+	        		data-url='../order-list/index?id={{item.id}}'
 	        		wx:for='{{order_tab}}' wx:key='item.id'
 	        		bindtap='goto'
 	        	>
@@ -23,7 +23,7 @@
 
 	        <view 
 	        	class="weui-cell weui-cell_access"
-	        	data-url='../order_form/order_form'
+	        	data-url='../order-list/index'
 	        	bindtap='goto'
 	        >
 	            <view class="weui-cell__bd">

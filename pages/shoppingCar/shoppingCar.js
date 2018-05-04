@@ -277,7 +277,7 @@ Page({
           console.log('发送请求')
           wx.showModal({
             title: '提示',
-            content: '提供预览',
+            content: '结算失败',
             showCancel:false
           })
           wx.hideLoading();
@@ -324,7 +324,9 @@ Page({
         //       }
         //     }
         //   })
-        // } else {
+        } else {
+          // wx.hideLoading();
+          this.navigateToPayOrder();
         //   wx.request({
         //     url: 'https://api.it120.cc/'+ app.globalData.subDomain +'/shop/goods/price',
         //     data: {
@@ -358,17 +360,19 @@ Page({
         //       }
         //     }
         //   })
-        }
-        
+        }        
       }
     },
     navigateToPayOrder:function () {
       wx.hideLoading();
       wx.navigateTo({
-        url:"/pages/to-pay-order/index"
+        url:"/pages/order_pay/order_pay"
       })
-    }
-
+    },
+  //  生命周期函数--监听页面隐藏
+  onHide: function () {
+    this.saveTap();
+  },
 
 
 })

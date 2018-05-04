@@ -30,8 +30,8 @@
 
 
 <!-- lave 留言-->
-<!-- <import src='../templates/leave/leave.wxml' />
-<template is='leave' data="{{text_cursor:text_cursor}}"/> -->
+<import src='../templates/leave/leave.wxml' />
+<template is='leave' data="{{text_cursor:text_cursor}}"/>
 
 
 <!-- footer -->
